@@ -48,5 +48,5 @@ function Pattern7(n){
     LowerPart(n);
 }
 
-Pattern7(7);
+Pattern7(9);
 
