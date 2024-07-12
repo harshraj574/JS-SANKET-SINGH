@@ -40,8 +40,6 @@ grep does a substring search of pyhton on the output of ls.
 'mv <filname1> <filename2>' -> this will cut paste filename1 to filename2 in the same folder so basically renaming the filename.
 
 
-
-
    < VIM TEXT EDITOR>
    ->Vim <filename> : it will create a file if it doesnt exist and open it in normal mode.
    In normal mode we can't do changes to our file but we can read and navigae the file.
