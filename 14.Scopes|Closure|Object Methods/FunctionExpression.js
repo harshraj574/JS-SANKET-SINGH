@@ -62,4 +62,4 @@ let dummy_arr = [1,2,3,5,6];
  let ans  = (function (x){
     return x*x;
  })(10);
- console.log(ans);
+console.log(ans(20));
