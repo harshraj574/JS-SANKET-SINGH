@@ -39,7 +39,7 @@ function writeFile(data,filename){
         setTimeout(()=>{
             console.log("writing to file", filename," is done");
             let status = "success";
-            res(status);
+            rej(status);
         },3000)
     })
 }
@@ -56,16 +56,34 @@ function upload(fileName,url){
 }
 
 
-const p2 = download("https://www.example.com").then(function handleDownload(value){
-    console.log("downloaded value is ",value);
+// const p2 = download("https://www.example.com").then(function handleDownload(value){
+//     console.log("downloaded value is ",value);
+//     return writeFile(value,"file.txt");
+// })
+// const p3 = p2.then((value)=>{
+//     console.log("file written", value);
+//     return upload("file.txt","https://www.example.com");
+// })
+// p3.then((value)=>{
+//     console.log("file uploaded");
+// })
+
+
+//Now this chaining can be done direclty also which is called .then chaining
+download("https://www.example.com")
+.then((value)=>{
+    console.log("download completed");
     return writeFile(value,"file.txt");
 })
-const p3 = p2.then((value)=>{
-    console.log("file written", value);
+.then((value)=>{
+    console.log("file written ",value);
     return upload("file.txt","https://www.example.com");
 })
-p3.then((value)=>{
-    console.log("file uploaded");
+.then((value)=>{
+    console.log("file uploaded ",value);
 })
-
+.catch(()=>{
+    console.log("error occured");
+}) // if the promise is rejected at any point in the '.then' chaining then it 
+//  immeditaley goes to the .catch block and executes the callback
    
