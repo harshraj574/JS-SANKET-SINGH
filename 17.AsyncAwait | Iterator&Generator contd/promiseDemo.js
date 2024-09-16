@@ -14,7 +14,7 @@ function writeFile(data,filename){
         setTimeout(()=>{
             console.log("writing to file", filename," is done");
             let status = "success";
-            rej(status);
+            res(status);
         },3000)
     })
 }
@@ -50,5 +50,7 @@ const ft = it.next();
 console.log(ft);
 ft.value.then(function doAfterReceiving(value){
     console.log("Calling doAfterreceiving when download is finised",value);
-    it.next(value); //interesting
+    const future = it.next(value); //interesting
+    if(future.done) return;
+    future.value.then(doAfterReceiving); //recursiveely calling the doAfterReceiving function
 })
