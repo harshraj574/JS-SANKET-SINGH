@@ -1,9 +1,20 @@
 
-let arr = [1,5,3,2,10,7];
+// function x(){
+//     for(var i=1; i<=5;i++){
+//         function call(x){
+//             setTimeout(()=>{
+//                 console.log(i);   
+//                },i*1000);
 
-arr.sort((x,y)=> x-y);
+//         }
+//         call(i);
+//         }     
+// }
+// x();
 
-console.log(arr);
+// let arr  = [1,2,-1,0,-2];
 
-arr.sort((x,y)=> y-x);
-console.log(arr);
+// arr.sort((x,y)=> x-y);
+// console.log(arr);
+
+
